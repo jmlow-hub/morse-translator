@@ -27,11 +27,34 @@ var morseCode = {
   w: ".--",
   x: "-..-",
   y: "-.--",
-  z: "--.."
+  z: "--..",
+  " ": "/"
 }; //grab html elements
-//capture typed input
-//validate input is valid
-//how to translate from typed input to morse code
-//run translation
-//display translation
+
+var translateBtn = document.querySelector("button");
+var textInput = document.getElementById("textInput");
+var textOutput = document.querySelector(".morse__output__translation"); //reference array
+
+var letterKeys = Object.keys(morseCode);
+console.log(letterKeys); //capture typed input
+
+var word = []; //how to translate from typed input to morse code
+//run translation  on button click
+
+var handleTranslate = translateBtn.addEventListener("click", function (e) {
+  var input = textInput.value.toLowerCase(); //validate input is valid - on click?
+
+  var validInput = function validInput() {
+    for (var i = 0; i < input.length; i++) {
+      if (letterKeys.includes(input[i])) {
+        word.push(i);
+      } else {
+        textInput.value = "";
+        document.querySelector(".morse__output__title").innerHTML = "Try Again!";
+      }
+    }
+  };
+
+  validInput();
+}); //display translation
 //clear area/clear translation
