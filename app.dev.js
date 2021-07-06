@@ -81,5 +81,10 @@ var handleTranslate = translateBtn.addEventListener("click", function (e) {
   validInput();
   translatePhrase();
   clear();
-}); //display translation
+});
+
+textInput.onfocus = function () {
+  document.querySelector(".morse__output__title").innerHTML = "";
+  textOutput.innerHTML = "";
+}; //display translation
 //clear area/clear translation

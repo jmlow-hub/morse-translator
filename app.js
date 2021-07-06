@@ -46,10 +46,13 @@ const words = [];
 //run translation  on button click
 const handleTranslate = translateBtn.addEventListener("click", (e) => {
   let input = textInput.value.toLowerCase();
+  
 
   
   //validate input is valid - if yes push letter to array, if not message to try again
 const validInput = () => {
+
+ 
    const regex = /[^\w\s]/g
    if(input.search(regex) != -1) {
     document.querySelector(".morse__output__title").innerHTML = "Try Again!"
@@ -101,9 +104,11 @@ const clear = () => {
 
 
 
-
-
-
+textInput.onfocus = () => {
+  document.querySelector(".morse__output__title").innerHTML = "";
+  textOutput.innerHTML = "";
+  
+}
 
 
 
