@@ -26,7 +26,7 @@ const morseCode = {
   x: "-..-",
   y: "-.--",
   z: "--..",
-  " ": "/"
+  " ": " "
 }
 
 //grab html elements
@@ -36,10 +36,10 @@ const textOutput = document.querySelector(".morse__output__translation");
 
 //reference array
 let letterKeys = Object.keys(morseCode);
-console.log(letterKeys)
+
 
 //capture typed input
-const word = [];
+const words = [];
 
 
 
@@ -51,23 +51,39 @@ const word = [];
 const handleTranslate = translateBtn.addEventListener("click", (e) => {
   let input = textInput.value.toLowerCase();
   
-  //validate input is valid - on click?
+  //validate input is valid - if yes push letter to array, if not message to try again
 const validInput = () => {
   for(let i = 0; i < input.length; i++) {
     if(letterKeys.includes(input[i])){
-      word.push(i);
+      words.push(input[i]);
     }else {
        textInput.value= "";
        document.querySelector(".morse__output__title").innerHTML = "Try Again!"
     }
   }
 }
- validInput(); 
 
-
-
+const translatePhrase = () => {
+  let translationArr = []
+  words.forEach((word) => {
+    translationArr.push(morseCode[word]);
+    })
+  
+  textOutput.innerHTML = translationArr.join("  ");
 }
-)
+
+ validInput(); 
+ translatePhrase();
+
+
+
+})
+
+
+
+
+
+
 
 
 
