@@ -33,7 +33,8 @@ var morseCode = {
 
 var translateBtn = document.querySelector("button");
 var textInput = document.getElementById("textInput");
-var textOutput = document.querySelector(".morse__output__translation"); //reference array for the morse code
+var textOutput = document.querySelector(".morse__output__translation");
+var title = document.querySelector(".morse__output__title"); //reference array for the morse code
 
 var letterKeys = Object.keys(morseCode); //capture typed input
 
@@ -46,7 +47,7 @@ var handleTranslate = translateBtn.addEventListener("click", function (e) {
     var regex = /[^\w\s]/g;
 
     if (input.search(regex) != -1) {
-      document.querySelector(".morse__output__title").innerHTML = "Try Again!";
+      title.innerHTML = "That word wasn't recognised, please try again!";
     } else {
       for (var i = 0; i < input.length; i++) {
         var letter = input[i];
@@ -63,12 +64,14 @@ var handleTranslate = translateBtn.addEventListener("click", function (e) {
   //   }
   // }
   // }
+  //display translation
 
 
   var translatePhrase = function translatePhrase() {
     var translationArr = [];
     words.forEach(function (word) {
       translationArr.push(morseCode[word]);
+      title.innerHTML = "Your phrase is:";
       textOutput.innerHTML = translationArr.join(" ");
     });
   };
@@ -81,10 +84,9 @@ var handleTranslate = translateBtn.addEventListener("click", function (e) {
   validInput();
   translatePhrase();
   clear();
-});
+}); //clear area/clear translation
 
 textInput.onfocus = function () {
   document.querySelector(".morse__output__title").innerHTML = "";
   textOutput.innerHTML = "";
-}; //display translation
-//clear area/clear translation
+};
