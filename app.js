@@ -32,25 +32,29 @@ const morseCode = {
 //grab html elements
 const translateEnglishBtn = document.querySelector(".morse__translate__toMorse");
 const tranlsateMorseBtn = document.querySelector(".english__translate__toEnglish")
+const clearMorseBtn = document.querySelector(".morse__clearMorse");
+const clearEnglishBtn = document.querySelector(".morse__clearEnglish");
 const textInput = document.getElementById("textInput");
 const textOutput = document.querySelector(".morse__output__translation");
 const title = document.querySelector(".morse__output__title");
 const morseBtns = document.querySelector(".english__translate__inputs");
 const morseDisplay = document.querySelector(".english__translate__keyedInputs");
+const englishOutput = document.querySelector(".english__translate__output");
 
 //reference array for the morse code
 let letterKeys = Object.keys(morseCode);
-console.log(letterKeys);
-//reference array for the english letter;
-let englishLetter = Object.values(morseCode);
-console.log(englishLetter);
-
 
 
 //capture typed input - english
 const englishWords = [];
 //capture button input - morse code
 const morseWords = [];
+
+//function to clear text input
+const clear = () => {
+  textInput.value= null;
+  englishWords.length = 0;
+}
 
 
 //run translation  on button click
@@ -81,10 +85,6 @@ const translatePhrase = () => {
       }
     )}
   
-const clear = () => {
-  textInput.value= null;
-  englishWords.length = 0;
-}
 
   validInput(); 
   translatePhrase();
@@ -97,6 +97,11 @@ textInput.onfocus = () => {
   document.querySelector(".morse__output__title").innerHTML = "";
   textOutput.innerHTML = "";
 }
+
+//clear input using clear button
+const handleClearMorse = clearMorseBtn.addEventListener("click", (e) => {
+      clear();
+})
 
 //------ MORSE TO ENGLISH -------//
 
@@ -119,9 +124,15 @@ const handleMorseInput = morseBtns.addEventListener("click", (e) => {
 
 const handleTranslateMorse = tranlsateMorseBtn.addEventListener("click", (e) => {
 
-        morseDisplay.innerHTML = morseWords.join(" ");
+        englishOutput.innerHTML = morseWords.join(" ");
 
         morseWords = [];
+
+})
+
+const handleClearEnglish = clearEnglishBtn.addEventListener("click", (e) => {
+    morseDisplay.innerHTML = "";
+    englishOutput.innerHTML = "";
 
 })
     

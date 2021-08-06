@@ -35,21 +35,26 @@ var morseCode = {
 
 var translateEnglishBtn = document.querySelector(".morse__translate__toMorse");
 var tranlsateMorseBtn = document.querySelector(".english__translate__toEnglish");
+var clearMorseBtn = document.querySelector(".morse__clearMorse");
+var clearEnglishBtn = document.querySelector(".morse__clearEnglish");
 var textInput = document.getElementById("textInput");
 var textOutput = document.querySelector(".morse__output__translation");
 var title = document.querySelector(".morse__output__title");
 var morseBtns = document.querySelector(".english__translate__inputs");
-var morseDisplay = document.querySelector(".english__translate__keyedInputs"); //reference array for the morse code
+var morseDisplay = document.querySelector(".english__translate__keyedInputs");
+var englishOutput = document.querySelector(".english__translate__output"); //reference array for the morse code
 
-var letterKeys = Object.keys(morseCode);
-console.log(letterKeys); //reference array for the english letter;
-
-var englishLetter = Object.values(morseCode);
-console.log(englishLetter); //capture typed input - english
+var letterKeys = Object.keys(morseCode); //capture typed input - english
 
 var englishWords = []; //capture button input - morse code
 
-var morseWords = []; //run translation  on button click
+var morseWords = []; //function to clear text input
+
+var clear = function clear() {
+  textInput.value = null;
+  englishWords.length = 0;
+}; //run translation  on button click
+
 
 var handleTranslateEnglish = translateEnglishBtn.addEventListener("click", function (e) {
   var input = textInput.value.toLowerCase(); //validate input is valid - if yes push letter to array, if not message to try again
@@ -77,11 +82,6 @@ var handleTranslateEnglish = translateEnglishBtn.addEventListener("click", funct
     });
   };
 
-  var clear = function clear() {
-    textInput.value = null;
-    englishWords.length = 0;
-  };
-
   validInput();
   translatePhrase();
   clear();
@@ -90,8 +90,12 @@ var handleTranslateEnglish = translateEnglishBtn.addEventListener("click", funct
 textInput.onfocus = function () {
   document.querySelector(".morse__output__title").innerHTML = "";
   textOutput.innerHTML = "";
-}; //------ MORSE TO ENGLISH -------//
+}; //clear input using clear button
 
+
+var handleClearMorse = clearMorseBtn.addEventListener("click", function (e) {
+  clear();
+}); //------ MORSE TO ENGLISH -------//
 
 var handleMorseInput = morseBtns.addEventListener("click", function (e) {
   e.preventDefault;
@@ -109,6 +113,10 @@ var handleMorseInput = morseBtns.addEventListener("click", function (e) {
   getMorse();
 });
 var handleTranslateMorse = tranlsateMorseBtn.addEventListener("click", function (e) {
-  morseDisplay.innerHTML = morseWords.join(" ");
+  englishOutput.innerHTML = morseWords.join(" ");
   morseWords = (_readOnlyError("morseWords"), []);
+});
+var handleClearEnglish = clearEnglishBtn.addEventListener("click", function (e) {
+  morseDisplay.innerHTML = "";
+  englishOutput.innerHTML = "";
 });
