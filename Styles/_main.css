@@ -67,10 +67,26 @@ main .morse__output h3__translation {
   font-size: 5em;
 }
 main .english__translate {
-  width: 60%;
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lato", sans-serif;
 }
-main .english__translate__translate__inputs {
-  width: 100%;
+main .english__translate__inputs {
   display: flex;
   flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+main .english__translate__inputs p {
+  text-align: center;
+}
+main .english__translate__inputs button {
+  min-width: 80px;
+  min-height: 56px;
+  padding: 20px 10px;
+  font-size: 10px;
+  border: 3px double black;
+  border-radius: 5px;
+  background-color: white;
 }
