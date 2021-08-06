@@ -2,33 +2,33 @@
 
 //create morse code object
 var morseCode = {
-  a: " ·- ",
-  b: " -··· ",
-  c: " -·-· ",
-  d: " -·· ",
-  e: " · ",
-  f: " ··-· ",
-  g: " --· ",
-  h: " ···· ",
-  i: " ·· ",
-  j: " ·--- ",
-  k: " -·- ",
-  l: " ·-·· ",
-  m: " -- ",
-  n: " -· ",
-  o: " --- ",
-  p: " ·--· ",
-  q: "--.- ",
-  r: " ·-· ",
-  s: " ··· ",
-  t: " - ",
-  u: " ··- ",
-  v: " ···- ",
-  w: " ·-- ",
-  x: " -··- ",
-  y: " -·-- ",
-  z: " --·· ",
-  " ": " //  "
+  a: " ⚫➖/ ",
+  b: " ➖⚫⚫⚫/ ",
+  c: " ➖⚫➖⚫/ ",
+  d: " ➖⚫⚫/ ",
+  e: " ⚫/ ",
+  f: " ⚫⚫➖⚫/ ",
+  g: " ➖➖⚫/ ",
+  h: " ⚫⚫⚫⚫/ ",
+  i: " ⚫⚫/ ",
+  j: " ⚫➖➖➖/ ",
+  k: " ➖⚫/ ",
+  l: " ⚫➖⚫/ ",
+  m: " ➖➖/ ",
+  n: " ➖⚫/ ",
+  o: " ➖➖➖/ ",
+  p: " ⚫➖➖⚫/ ",
+  q: " ➖➖⚫➖/ ",
+  r: " ⚫➖⚫/ ",
+  s: " ⚫⚫⚫/ ",
+  t: " ➖/ ",
+  u: " ⚫⚫➖/ ",
+  v: " ⚫⚫⚫➖/ ",
+  w: " ⚫➖➖/ ",
+  x: " ➖⚫⚫➖/ ",
+  y: " ➖⚫➖➖/ ",
+  z: " ➖➖⚫⚫/ ",
+  " ": "   //    "
 }; //grab html elements
 
 var translateBtn = document.querySelector("button");
@@ -71,7 +71,7 @@ var handleTranslate = translateBtn.addEventListener("click", function (e) {
     var translationArr = [];
     words.forEach(function (word) {
       translationArr.push(morseCode[word]);
-      title.innerHTML = "Your phrase is:";
+      title.innerHTML = "Your Morse Code is:";
       textOutput.innerHTML = translationArr.join(" ");
     });
   };

@@ -5,21 +5,19 @@ main {
   flex-direction: column;
   align-items: center;
 }
-
-.morse__about {
+main .morse__about {
   width: 95vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "Lato", sans-serif;
 }
-.morse__about__text {
+main .morse__about__text {
   font-size: 1em;
   margin-top: 10px;
   text-align: justify;
 }
-
-.morse__translate {
+main .morse__translate {
   width: 95vw;
   display: flex;
   flex-direction: column;
@@ -28,17 +26,17 @@ main {
   font-size: 15px;
   margin-bottom: 20px;
 }
-.morse__translate h4 {
+main .morse__translate h4 {
   margin: 10px;
 }
-.morse__translate__inputs {
+main .morse__translate__inputs {
   width: 95vw;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.morse__translate__inputs input {
+main .morse__translate__inputs input {
   width: 50%;
   font-family: "Lato", sans-serif;
   padding: 5px;
@@ -46,7 +44,7 @@ main {
   border-radius: 5px;
   caret-color: gold;
 }
-.morse__translate__inputs button {
+main .morse__translate__inputs button {
   background-color: white;
   font-family: "Georama", sans-serif;
   font-weight: bold;
@@ -55,17 +53,24 @@ main {
   border: 3px double black;
   border-radius: 5px;
 }
-
-.morse__output {
+main .morse__output {
   width: 95vw;
   display: flex;
   flex-direction: column;
   font-family: "Lato", sans-serif;
 }
-.morse__output h3 {
+main .morse__output h3 {
   font-family: "Lato", sans-serif;
 }
-.morse__output h3__translation {
+main .morse__output h3__translation {
   font-family: "Lato", sans-serif;
   font-size: 5em;
+}
+main .english__translate {
+  width: 60%;
+}
+main .english__translate__translate__inputs {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }

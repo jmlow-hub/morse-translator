@@ -6,88 +6,101 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-.morse__about {
-  width: 95vw;
-  //margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Lato', sans-serif;
 
-    &__text {
-      font-size: 1em;
-      margin-top: 10px;
-      text-align: justify;     
-    }
-}
+      .morse__about {
+        width: 95vw;
+        //margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Lato', sans-serif;
 
-.morse__translate {
-  width: 95vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Lato', sans-serif;
-  font-size: 15px;
-  margin-bottom: 20px;
+          &__text {
+            font-size: 1em;
+            margin-top: 10px;
+            text-align: justify;     
+          }
+      }
 
-    h4 {
-      margin: 10px;
-    }
-
-    &__inputs {
+      .morse__translate {
       width: 95vw;
-      margin-top: 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
-
-            input {
-              width: 50%;
-              font-family: 'Lato', sans-serif;
-              padding: 5px;
-              border: 2px solid black;
-              border-radius: 5px;
-              caret-color: gold;
-            }
-    
-           
-            button {
-              background-color: white;
-              font-family: 'Georama', sans-serif;
-              font-weight: bold;
-              padding: 5px;       
-              margin: 10px;
-              border: 3px double black;
-              border-radius: 5px;
-
-            }
-          }  
-           
-
-    }
-    
-    .morse__output {
-      width: 95vw;
-      display: flex;
-      flex-direction: column;
       font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      margin-bottom: 20px;
 
-        h3 {
-          font-family: 'Lato', sans-serif;
+        h4 {
+          margin: 10px;
+        }
+
+        &__inputs {
+          width: 95vw;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+                input {
+                  width: 50%;
+                  font-family: 'Lato', sans-serif;
+                  padding: 5px;
+                  border: 2px solid black;
+                  border-radius: 5px;
+                  caret-color: gold;
+                }
+        
+              
+                button {
+                  background-color: white;
+                  font-family: 'Georama', sans-serif;
+                  font-weight: bold;
+                  padding: 5px;       
+                  margin: 10px;
+                  border: 3px double black;
+                  border-radius: 5px;
+
+                }
+              }     
+      }
+    
+      .morse__output {
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+
+      h3 {
+        font-family: 'Lato', sans-serif;
 
         &__translation {
           font-family: 'Lato', sans-serif;
           font-size: 5em;
+         }
           
+      }
+      }
+
+      .english__translate {
+        width: 60%;
+
+        &__translate__inputs {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
         }
-          
+  
+
+
+      }
 
 
 
-        }
+      
+           
 
-     
+
+
 }
-
