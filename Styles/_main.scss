@@ -63,8 +63,13 @@ main {
                   margin: 10px;
                   border: 3px double black;
                   border-radius: 5px;
-
+                  box-shadow: 2px 2px 5px darkgrey;                  
                 }
+
+                button:hover {
+                  box-shadow: inset 1px 1px 5px darkgrey;              
+
+                  }
               }     
       }
     
@@ -122,8 +127,14 @@ main {
             margin: 10px;
             border: 3px double black;
             border-radius: 5px;
-            
+            box-shadow: 1px 1px 5px darkgrey;          
+
           }
+
+          > button:hover {
+            box-shadow: inset 1px 1px 5px darkgrey;              
+
+            }
         }
 
       
@@ -146,9 +157,15 @@ main {
                 font-size: 10px;
                 border: 3px double black;
                 border-radius: 5px;
-                background-color: white;             
-             }           
-          
+                background-color: white;            
+                box-shadow: 1px 1px 5px darkgrey;              
+
+             }    
+             
+              button:hover {
+                box-shadow: inset 1px 1px 5px darkgrey;
+              }            
+               
         }
   
 

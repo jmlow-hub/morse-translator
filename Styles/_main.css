@@ -53,6 +53,10 @@ main .morse__translate__inputs button {
   margin: 10px;
   border: 3px double black;
   border-radius: 5px;
+  box-shadow: 2px 2px 5px darkgrey;
+}
+main .morse__translate__inputs button:hover {
+  box-shadow: inset 1px 1px 5px darkgrey;
 }
 main .morse__output {
   width: 95vw;
@@ -100,6 +104,10 @@ main .english__translate .english__translate__btns > button {
   margin: 10px;
   border: 3px double black;
   border-radius: 5px;
+  box-shadow: 1px 1px 5px darkgrey;
+}
+main .english__translate .english__translate__btns > button:hover {
+  box-shadow: inset 1px 1px 5px darkgrey;
 }
 main .english__translate__inputs {
   display: flex;
@@ -118,6 +126,10 @@ main .english__translate__inputs button {
   border: 3px double black;
   border-radius: 5px;
   background-color: white;
+  box-shadow: 1px 1px 5px darkgrey;
+}
+main .english__translate__inputs button:hover {
+  box-shadow: inset 1px 1px 5px darkgrey;
 }
 
 @media screen and (max-width: 768px) {
