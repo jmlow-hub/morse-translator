@@ -10,7 +10,7 @@ const morseCode = {
   h: " ⚫⚫⚫⚫/ ",
   i: " ⚫⚫/ ",
   j: " ⚫➖➖➖/ ", 
-  k: " ➖⚫/ ",
+  k: " ➖⚫➖/ ",
   l: " ⚫➖⚫⚫/ ",
   m: " ➖➖/ ",
   n: " ➖⚫/ ",
@@ -109,8 +109,13 @@ const handleMorseInput = morseBtns.addEventListener("click", (e) => {
     e.preventDefault
 
     let morseLetter = e.target.value;
+    console.log(morseLetter)
     //morseWords.push(morseLetter);
+    if(!morseLetter) {
+      morseDisplay.innerHTML += "";
+    }else {
     morseDisplay.innerHTML += morseLetter;
+    }
 
     const getMorse = () => {
       
@@ -126,13 +131,14 @@ const handleTranslateMorse = tranlsateMorseBtn.addEventListener("click", (e) => 
 
         englishOutput.innerHTML = morseWords.join(" ");
 
-        morseWords = [];
+        morseWords.length = 0;
 
 })
 
 const handleClearEnglish = clearEnglishBtn.addEventListener("click", (e) => {
     morseDisplay.innerHTML = "";
     englishOutput.innerHTML = "";
+    morseWords.length = 0;
 
 })
     

@@ -1,7 +1,5 @@
 "use strict";
 
-function _readOnlyError(name) { throw new Error("\"" + name + "\" is read-only"); }
-
 //create morse code object
 var morseCode = {
   a: " ⚫➖/ ",
@@ -14,7 +12,7 @@ var morseCode = {
   h: " ⚫⚫⚫⚫/ ",
   i: " ⚫⚫/ ",
   j: " ⚫➖➖➖/ ",
-  k: " ➖⚫/ ",
+  k: " ➖⚫➖/ ",
   l: " ⚫➖⚫⚫/ ",
   m: " ➖➖/ ",
   n: " ➖⚫/ ",
@@ -99,9 +97,14 @@ var handleClearMorse = clearMorseBtn.addEventListener("click", function (e) {
 
 var handleMorseInput = morseBtns.addEventListener("click", function (e) {
   e.preventDefault;
-  var morseLetter = e.target.value; //morseWords.push(morseLetter);
+  var morseLetter = e.target.value;
+  console.log(morseLetter); //morseWords.push(morseLetter);
 
-  morseDisplay.innerHTML += morseLetter;
+  if (!morseLetter) {
+    morseDisplay.innerHTML += "";
+  } else {
+    morseDisplay.innerHTML += morseLetter;
+  }
 
   var getMorse = function getMorse() {
     var getKey = letterKeys.find(function (key) {
@@ -114,9 +117,10 @@ var handleMorseInput = morseBtns.addEventListener("click", function (e) {
 });
 var handleTranslateMorse = tranlsateMorseBtn.addEventListener("click", function (e) {
   englishOutput.innerHTML = morseWords.join(" ");
-  morseWords = (_readOnlyError("morseWords"), []);
+  morseWords.length = 0;
 });
 var handleClearEnglish = clearEnglishBtn.addEventListener("click", function (e) {
   morseDisplay.innerHTML = "";
   englishOutput.innerHTML = "";
+  morseWords.length = 0;
 });
